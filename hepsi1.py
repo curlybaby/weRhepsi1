@@ -145,5 +145,5 @@ class hepsi1:
  	 	#path.append(start) # do not add this because Buğra Hoca does not want the initial state in the path
 			path.reverse() # convert the backward path to forward
 			return path
-		path = list(onMyWay(came_from,loc,goal))
+		path = onMyWay(came_from,loc,goal)
 		return path
