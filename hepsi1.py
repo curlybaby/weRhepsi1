@@ -48,7 +48,7 @@ class hepsi1:
 		loc, game_point = list(info[self.name])
 		(y,x) = loc # get current y,x coordinates
 
-		def bestOption(loc,imag):
+		def bestOption(loc,img):
 			whereami=loc
 
 			def findNeighbor(loc,stepsize):
@@ -61,7 +61,7 @@ class hepsi1:
 			pickme = PriorityQueue() #initialize the empty priority queue to sort the options
 			for k,m in enumerate(centerpoints):
 				for key in self.clrDictionary: #we should iterate each key of the dictionary to match colors of the maze with corresponding points
-					if np.array_equal(imag[m[0],m[1],:],np.array(self.clrDictionary[key][0])): #check if the colors match
+					if np.array_equal(img[m[0],m[1],:],np.array(self.clrDictionary[key][0])): #check if the colors match
 						pointdic[tuple(m)] = self.clrDictionary[key][1] #if the colors match, put the corresponding point from the key to the center dictionary
 			if whereami in initLocs:
 				neighAr=findNeighbor(whereami,50)
