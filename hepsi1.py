@@ -40,7 +40,7 @@ class hepsi1:
 			'clr1':((100, 10, 200),1, 3)
 		}
 		self.clrDictionary = colorz
-	initLocs = [(25, 175),(25, 375),(25, 575),(175, 25),(375, 25),(575, 25),(175, 725),(375, 725),(575, 725)]
+	initLocs = [[25, 175],[25, 375],[25, 575],[175, 25],[375, 25],[575, 25],[175, 725],[375, 725],[575, 725]]
 	def run(self, img, info):
 		myinfo = info[self.name]
 		imS = img.shape[0] # assume square image and get size
@@ -53,7 +53,7 @@ class hepsi1:
 
 			def findNeighbor(loc,stepsize):
 				(y,x) = loc
-				neighArr = [(y+stepsize, x), (y-stepsize, x), (y, x-stepsize), (y,x+stepsize)] #calculate the 4-neighbors
+				neighArr = [[y+stepsize, x], [y-stepsize, x], [y, x-stepsize], [y,x+stepsize]] #calculate the 4-neighbors
 				return neighArr
 
 			pointdic = {} #initialize the dictionary to store the points
