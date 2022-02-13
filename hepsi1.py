@@ -46,7 +46,6 @@ class hepsi1:
 		imS = img.shape[0] # assume square image and get size
 		# get current location
 		loc, game_point = list(info[self.name])
-		(y,x) = loc # get current y,x coordinates
 
 		def bestOption(loc,img):
 			whereami=loc
