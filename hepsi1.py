@@ -51,7 +51,7 @@ class hepsi1:
 
 			def findNeighbor(loc,stepsize):
 				(y,x) = loc
-				neighArr = [[y+stepsize, x], [y-stepsize, x], [y, x-stepsize], [y,x+stepsize]] #calculate the 4-neighbors
+				neighArr = [(y+stepsize, x), (y-stepsize, x), (y, x-stepsize), (y,x+stepsize)] #calculate the 4-neighbors
 				return neighArr
 
 			pointdic = {} #initialize the dictionary to store the points
