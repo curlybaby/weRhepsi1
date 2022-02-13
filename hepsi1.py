@@ -83,7 +83,7 @@ class hepsi1:
 							if t in pointdic:
 								sum=sum+ pointdic[t]
 						pickme.put((-sum,b))
-			goal = pickme.get()[1]
+				goal = pickme.get()[1]
 			return goal
 
 		goal = list(bestOption(loc,img))
@@ -133,7 +133,7 @@ class hepsi1:
 						came_from[candid] = current #add the current state to the path (closed list) as the parent of candid
 			return came_from
 
-		came_from = aSearch([175,175],[275,175]) #these are hard coded on purpose, change them to your initial and goal state
+		came_from = aSearch(loc,goal) #these are hard coded on purpose, change them to your initial and goal state
 		def onMyWay(came_from,initial,goal): #return the path. make sure N <= 100 and the x y coordinates are in a suitable order (pixels or image array are notated by y,x
 			current = tuple(goal)
 			initial = tuple(initial)
@@ -145,5 +145,5 @@ class hepsi1:
  	 	#path.append(start) # do not add this because Buğra Hoca does not want the initial state in the path
 			path.reverse() # convert the backward path to forward
 			return path
-		path = onMyWay(came_from,[175,175],[275,175])
+		path = onMyWay(came_from,loc,goal)
 		return path
