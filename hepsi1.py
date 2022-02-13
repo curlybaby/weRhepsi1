@@ -40,7 +40,6 @@ class hepsi1:
 			'clr1':((100, 10, 200),1, 3)
 		}
 		self.clrDictionary = colorz
-	initLocs = [[25, 175],[25, 375],[25, 575],[175, 25],[375, 25],[575, 25],[175, 725],[375, 725],[575, 725]]
 	def run(self, img, info):
 		myinfo = info[self.name]
 		imS = img.shape[0] # assume square image and get size
@@ -62,6 +61,7 @@ class hepsi1:
 				for key in self.clrDictionary: #we should iterate each key of the dictionary to match colors of the maze with corresponding points
 					if np.array_equal(img[m[0],m[1],:],np.array(self.clrDictionary[key][0])): #check if the colors match
 						pointdic[tuple(m)] = self.clrDictionary[key][1] #if the colors match, put the corresponding point from the key to the center dictionary
+			initLocs = [[25, 175],[25, 375],[25, 575],[175, 25],[375, 25],[575, 25],[175, 725],[375, 725],[575, 725]]
 			if whereami in initLocs:
 				neighAr=findNeighbor(whereami,50)
 				for i,j in enumerate(neighAr):
